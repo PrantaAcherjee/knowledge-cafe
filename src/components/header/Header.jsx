@@ -1,9 +1,14 @@
+import profile from "../../assets/images/profile.png"
 function Header() {
   
 
     return (
       <>
-        <h1 className='text-2xl'>Knowledge Cafe</h1>
+      <div className="flex justify-between items-center p-4 m-4 border-b-2">
+      <h1 className='text-4xl font-bold'>Knowledge Cafe</h1>
+      <img src={profile} alt="" />
+      </div>
+        
       </>
     )
   }

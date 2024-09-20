@@ -10,8 +10,8 @@ import { useState } from "react";
     },[])
 return(
     <>
-    <div>
-        this is blogs
+    <div className="md:w-2/3">
+        Blogs {blogs.length}
     </div>
     </>
 )
