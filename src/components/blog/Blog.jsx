@@ -1,10 +1,34 @@
 
+import PropTypes from 'prop-types';
+import { BsBookmarkDash } from "react-icons/bs";
+const Blog=({blog,handleAddToBookmark})=>{
+    const {title,cover,author_img,author,reading_time,posted_date,hashtags}=blog;
 
-const Blog=({blog})=>{
-console.log(blog)
+    //  console.log(blog)
+
     return(
-        <div>
-
+        <div className='m-7'>
+         
+         <img className='w-full' src={cover} alt={title} />
+         <h2 className='text-3xl'>Title: {title}</h2>
+         {
+            hashtags.map((hash,idx)=><span key={idx}><a href="">#{hash}</a></span>)
+         }
+         <div className='flex justify-between'>
+            <div className='flex'>
+             <img className='w-14' src={author_img} alt="" />
+             <div className='ml-6'>
+                <h2 className='2xl'>{author}</h2>
+                <p>{posted_date}</p>
+             </div>
+            </div>
+            <div>
+             <span>{reading_time} Min Read</span>
+             <button
+             onClick={handleAddToBookmark}
+             ><BsBookmarkDash /></button>
+            </div>
+         </div>
         </div>
     )
 }
