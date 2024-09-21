@@ -1,7 +1,7 @@
 
 import PropTypes from 'prop-types';
 import { BsBookmarkDash } from "react-icons/bs";
-const Blog=({blog,handleAddToBookmark})=>{
+const Blog=({blog,handleAddToBookmark,handleMarkAsRead})=>{
     const {title,cover,author_img,author,reading_time,posted_date,hashtags}=blog;
 
     //  console.log(blog)
@@ -20,8 +20,10 @@ const Blog=({blog,handleAddToBookmark})=>{
              <div className='ml-6'>
                 <h2 className='2xl'>{author}</h2>
                 <p>{posted_date}</p>
+                <button onClick={()=>handleMarkAsRead(reading_time)} className='text-blue-400 underline'>Mark As Read</button>
              </div>
             </div>
+            
             <div>
              <span>{reading_time} Min Read</span>
              <button
